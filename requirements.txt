@@ -1,0 +1,6 @@
+cryptography
+uvicorn
+flask
+requests
+Jinja2
+psycopg2

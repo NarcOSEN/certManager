@@ -1,0 +1,7 @@
+[ req ]
+distinguished_name = dn
+prompt = no
+[ dn ]
+CN = Example
+O = Example Org
+C = US
