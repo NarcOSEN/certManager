@@ -13,42 +13,49 @@ def check_value_types(input_dict):
 def main():
 
     file_paths = []
-    for root, dir, files in os.walk("crypto_mess"):
+    for root, dir, files in os.walk("./home"):
         for file in files:
             full_path = os.path.join(root, file)
             file_paths.append(full_path)
 
     for path in file_paths:
-        with open(path, "rb") as file:
-            read_data = file.read()
-            try:
-                print(f"Successfully loaded{path} as DER CERT.", json.dumps(
-                    get_der_cert_as_dict(read_data)))
-            except Exception as e:
-                print(f"Couldn't load file {path} as DER X509 CERT.", e)
-            try:
-                print(f"Successfully loaded {path} as PEM CERT", json.dumps(
-                    get_pem_cert_as_dict(read_data)))
-            except Exception as e:
-                print(f"Couldn't load file {path} as PEM X509 CERT.", e)
-            try:
-                print(f"Successfully loaded {path} as PEM CSR.", json.dumps(
-                    get_pem_csr_as_dict(read_data)))
-            except Exception as e:
-                print(f"Coudln't load file {path} as PEM CSR.", e)
-            try:
-                print(f"Successfully loaded {path} as DER CSR", json.dumps(
-                    get_der_csr_as_dict(read_data)))
-            except Exception as e:
-                print(f"Coudln't load file {path} as DER CSR.", e)
-            try:
-                passwords_list = [b"test", None]
-                print(f"Successfully loaded {path} as PRIVATE KEY", json.dumps(
-                    get_private_key_as_dict(read_data, passwords_list=passwords_list)))
-            except Exception as e:
-                print(f"Coudln't load file {path} as PRIVATE_KEY.", e)
+        try:
+            with open(path, "rb") as file:
+                read_data = file.read()
+                try:
+                    result_dict = get_der_cert_as_dict(read_data)
+                    result_dict["path"] = path
+                    print(json.dumps(result_dict))
+                except Exception as e:
+                    print(f"Couldn't load file {path} as DER X509 CERT.", e)
+                try:
+                    result_dict = get_pem_cert_as_dict(read_data)
+                    result_dict["path"] = path
+                    print(json.dumps(result_dict))
+                except Exception as e:
+                    print(f"Couldn't load file {path} as PEM X509 CERT.", e)
+                try:
+                    result_dict = get_pem_csr_as_dict(read_data)
+                    result_dict["path"] = path
+                    print( json.dumps(result_dict))
+                except Exception as e:
+                    print(f"Couldn't load file {path} as PEM CSR.", e)
+                try:
+                    result_dict = get_der_csr_as_dict(read_data)
+                    result_dict["path"] = path
+                    print(json.dumps(result_dict))
+                except Exception as e:
+                    print(f"Couldn't load file {path} as DER CSR.", e)
+                #TODO: Fix get_private_key_as_dict() function. Not working
+                #try:
+                #    passwords_list = [b"test", None]
+                #    print(f"Successfully loaded {path} as PRIVATE KEY", json.dumps(
+                #        get_private_key_as_dict(read_data, passwords_list=passwords_list)))
+                except Exception as e:
+                    print(f"Coudln't load file {path} as PRIVATE_KEY.", e)
+        except Exception as e:
+            print(f"Could not load read file {path}. Exception: {e}")
 
 
 if __name__ == "__main__":
     main()
-    # comment
