@@ -120,7 +120,7 @@ def run_load():
                 elif is_der_cert == True:
                     logger.info(f"[{curr_time()}] File {path} was read and loaded as x509 cert. PubKey Sha256: [{hash_string(result_dict_der_cert["public_key"]["public_bytes"])}]")
                 elif is_pem_csr == True:
-                    logger.info(f"[{curr_time()}] File {path} was read and loaded as x509 cert. PubKey Sha256: [{hash_string(result_dict_pem_csr["public_key"]["public_bytes"])}]")
+                    logger.info(f"[{curr_time()}] File {path} was read and loaded as x509 csr. PubKey Sha256: [{hash_string(result_dict_pem_csr["public_key"]["public_bytes"])}]")
                 elif is_der_csr == True:
                     logger.info(f"[{curr_time()}] File {path} was read and loaded as x509 csr. PubKey Sha256: [{hash_string(result_dict_der_csr["public_key"]["public_bytes"])}]")
                 elif is_private_key == True:
