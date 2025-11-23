@@ -13,3 +13,5 @@ pyvenv.cfg
 *.logs
 manager.logs
 manager.logs
+*.logs
+*.log

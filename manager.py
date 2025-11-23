@@ -61,7 +61,7 @@ def hash_string(text: str) -> str:
 def curr_time():
     return datetime.datetime.now(tz=datetime.UTC)
 def run_load():
-    logging.basicConfig(filename="manager.logs",level=logging.INFO)
+    logging.basicConfig(filename="dev.log",level=logging.INFO)
     logger.info("Started loading certificate from path:")
     file_paths = []
     for root, dir, files in os.walk("./crypto_mess/"):
