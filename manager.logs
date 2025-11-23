@@ -13029,3 +13029,266 @@ INFO:__main__:[2025-11-23 15:41:22.860794+00:00] File ./crypto_mess/pfx/full_cha
 INFO:__main__:Started loading certificate from path:
 INFO:__main__:[2025-11-23 15:41:32.961579+00:00] File ./crypto_mess/gen_roided.sh was read but could not be loaded as either csr, cert or private key. Skipping.
 INFO:__main__:[2025-11-23 15:41:33.061940+00:00] File ./crypto_mess/gen.sh was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:33.162229+00:00] File ./crypto_mess/openssl.cnf was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:33.262625+00:00] File ./crypto_mess/keys/encrypted_rsa.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:33.363056+00:00] File ./crypto_mess/keys/key_ed448.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:33.463438+00:00] File ./crypto_mess/keys/key_ed25519.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:33.563730+00:00] File ./crypto_mess/keys/ca_key_ec.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:33.664109+00:00] File ./crypto_mess/keys/encrypted_rsa.der was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:33.764501+00:00] File ./crypto_mess/keys/ca_key_ed448.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:33.864813+00:00] File ./crypto_mess/keys/key_rsa.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:33.965131+00:00] File ./crypto_mess/keys/ca_key_dsa.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:34.065531+00:00] File ./crypto_mess/keys/key_ec.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:34.165840+00:00] File ./crypto_mess/keys/ed25519.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:34.266224+00:00] File ./crypto_mess/keys/key_x448.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:34.366526+00:00] File ./crypto_mess/keys/key_x25519.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:34.466927+00:00] File ./crypto_mess/keys/ca_key_rsa.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:34.567330+00:00] File ./crypto_mess/keys/key_dsa.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:34.667659+00:00] File ./crypto_mess/keys/dsaparam.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:34.767940+00:00] File ./crypto_mess/keys/ca_key_ed25519.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:34.868269+00:00] File ./crypto_mess/broken/corrupted.crt was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:34.968669+00:00] File ./crypto_mess/broken/cert_as_key.crt was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:35.069106+00:00] File ./crypto_mess/broken/fake.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:35.171832+00:00] File ./crypto_mess/misc/tls-ca-bundle.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:35.273814+00:00] File ./crypto_mess/misc/data.bin was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:35.374220+00:00] File ./crypto_mess/misc/notes.txt was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:35.474524+00:00] File ./crypto_mess/roots/root_ec.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:35.574821+00:00] File ./crypto_mess/roots/root_rsa.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:35.675409+00:00] File ./crypto_mess/roots/root_rsa.der was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:35.775790+00:00] File ./crypto_mess/roots/root_ec.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:35.876439+00:00] File ./crypto_mess/roots/root_rsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:35.977082+00:00] File ./crypto_mess/roots/root_ec.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:36.077560+00:00] File ./crypto_mess/roots/root_rsa.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:36.177908+00:00] File ./crypto_mess/leaves/client_expired.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:36.278418+00:00] File ./crypto_mess/leaves/client_expired.csr was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:41:36.378719+00:00] File ./crypto_mess/leaves/server_valid.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:36.479105+00:00] File ./crypto_mess/leaves/client_expired.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:36.579745+00:00] File ./crypto_mess/leaves/server_valid.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:36.680283+00:00] File ./crypto_mess/leaves/server_valid.csr was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:41:36.780804+00:00] File ./crypto_mess/intermediates/int_ec1.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:36.881270+00:00] File ./crypto_mess/intermediates/int_rsa1.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:36.981700+00:00] File ./crypto_mess/intermediates/int_rsa1.csr was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:41:37.082165+00:00] File ./crypto_mess/intermediates/int_rsa1.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:37.182664+00:00] File ./crypto_mess/intermediates/int_ec1.csr was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:41:37.283165+00:00] File ./crypto_mess/intermediates/int_rsa1.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:37.383525+00:00] File ./crypto_mess/intermediates/int_ec1.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:37.484013+00:00] File ./crypto_mess/csrs/csr_rsa.pem was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:41:37.584497+00:00] File ./crypto_mess/csrs/csr_ec.pem was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:41:37.684924+00:00] File ./crypto_mess/csrs/csr_ed448.pem was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:41:37.785428+00:00] File ./crypto_mess/csrs/csr_ed25519.pem was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:41:37.885850+00:00] File ./crypto_mess/csrs/csr_dsa.pem was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:41:37.986340+00:00] File ./crypto_mess/certs/ec_signed_by_ed448.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:38.086816+00:00] File ./crypto_mess/certs/ed25519_ca.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:38.187338+00:00] File ./crypto_mess/certs/ec_signed_by_dsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:38.287844+00:00] File ./crypto_mess/certs/ed25519_signed_by_dsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:38.388110+00:00] File ./crypto_mess/certs/dsa_ca.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:38.488628+00:00] File ./crypto_mess/certs/ec_ca.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:38.589208+00:00] File ./crypto_mess/certs/ec_signed_by_ec.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:38.689545+00:00] File ./crypto_mess/certs/ec_ca.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:38.790114+00:00] File ./crypto_mess/certs/cert_rsa_signed_by_ed25519.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:38.890630+00:00] File ./crypto_mess/certs/rsa_signed_by_ed25519.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:38.991086+00:00] File ./crypto_mess/certs/rsa_signed_by_dsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:39.091300+00:00] File ./crypto_mess/certs/rsa_ca.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:39.191782+00:00] File ./crypto_mess/certs/cert_rsa_signed_by_dsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:39.292512+00:00] File ./crypto_mess/certs/cert_ec_signed_by_ed448.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:39.392798+00:00] File ./crypto_mess/certs/ed448_ca.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:39.493447+00:00] File ./crypto_mess/certs/cert_ed25519_signed_by_rsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:39.594160+00:00] File ./crypto_mess/certs/cert_ec_signed_by_rsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:39.694718+00:00] File ./crypto_mess/certs/cert_dsa_signed_by_ed25519.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:39.795001+00:00] File ./crypto_mess/certs/dsa.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:39.895592+00:00] File ./crypto_mess/certs/dsa_ca.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:39.996158+00:00] File ./crypto_mess/certs/ca_cert_ec.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:40.096743+00:00] File ./crypto_mess/certs/ca_cert_ed448.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:40.197365+00:00] File ./crypto_mess/certs/cert_ed448_signed_by_ed25519.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:40.297893+00:00] File ./crypto_mess/certs/cert_ed25519_signed_by_dsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:40.398321+00:00] File ./crypto_mess/certs/cert_dsa_signed_by_ed448.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:40.498784+00:00] File ./crypto_mess/certs/cert_rsa_signed_by_ec.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:40.599285+00:00] File ./crypto_mess/certs/cert_dsa_signed_by_ec.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:40.699619+00:00] File ./crypto_mess/certs/ca_cert_dsa.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:40.800055+00:00] File ./crypto_mess/certs/ed448.csr was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:41:40.900601+00:00] File ./crypto_mess/certs/cert_ed448_signed_by_ed448.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:41.001110+00:00] File ./crypto_mess/certs/ec.csr was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:41:41.101637+00:00] File ./crypto_mess/certs/ed25519_signed_by_ed25519.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:41.202438+00:00] File ./crypto_mess/certs/cert_ec_signed_by_ec.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:41.303121+00:00] File ./crypto_mess/certs/dsa_signed_by_rsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:41.403719+00:00] File ./crypto_mess/certs/rsa_signed_by_ec.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:41.504143+00:00] File ./crypto_mess/certs/rsa.csr was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:41:41.604565+00:00] File ./crypto_mess/certs/dsa.csr was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:41:41.705140+00:00] File ./crypto_mess/certs/cert_ed448_signed_by_ec.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:41.805703+00:00] File ./crypto_mess/certs/ed448_signed_by_ec.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:41.906282+00:00] File ./crypto_mess/certs/cert_ec_signed_by_dsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:42.006838+00:00] File ./crypto_mess/certs/cert_ed448_signed_by_rsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:42.107406+00:00] File ./crypto_mess/certs/ec_signed_by_ed25519.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:42.207978+00:00] File ./crypto_mess/certs/ed25519_signed_by_rsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:42.308267+00:00] File ./crypto_mess/certs/ed25519_ca.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:42.408759+00:00] File ./crypto_mess/certs/rsa_signed_by_rsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:42.509344+00:00] File ./crypto_mess/certs/dsa_signed_by_ed448.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:42.609945+00:00] File ./crypto_mess/certs/cert_ed25519_signed_by_ed25519.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:42.710518+00:00] File ./crypto_mess/certs/ed448_signed_by_rsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:42.810830+00:00] File ./crypto_mess/certs/ed25519.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:42.911522+00:00] File ./crypto_mess/certs/dsa_signed_by_ed25519.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:43.012193+00:00] File ./crypto_mess/certs/cert_dsa_signed_by_dsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:43.112871+00:00] File ./crypto_mess/certs/dsa_signed_by_dsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:43.213595+00:00] File ./crypto_mess/certs/ed448_signed_by_ed448.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:43.314271+00:00] File ./crypto_mess/certs/cert_rsa_signed_by_rsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:43.414804+00:00] File ./crypto_mess/certs/cert_rsa_signed_by_ed448.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:43.515366+00:00] File ./crypto_mess/certs/cert_ed448_signed_by_dsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:43.615715+00:00] File ./crypto_mess/certs/rsa.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:43.716270+00:00] File ./crypto_mess/certs/dsa_signed_by_ec.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:43.816559+00:00] File ./crypto_mess/certs/ca_cert_rsa.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:43.916920+00:00] File ./crypto_mess/certs/ca_cert_ec.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:44.017614+00:00] File ./crypto_mess/certs/cert_ec_signed_by_ed25519.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:44.117865+00:00] File ./crypto_mess/certs/ed448.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:44.218313+00:00] File ./crypto_mess/certs/ed25519.csr was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:41:44.318885+00:00] File ./crypto_mess/certs/ed25519_signed_by_ed448.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:44.419378+00:00] File ./crypto_mess/certs/ed448_signed_by_dsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:44.519964+00:00] File ./crypto_mess/certs/ec_signed_by_rsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:44.620436+00:00] File ./crypto_mess/certs/ed25519_signed_by_ec.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:44.720768+00:00] File ./crypto_mess/certs/ca_cert_ed25519.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:44.821264+00:00] File ./crypto_mess/certs/ca_cert_ed25519.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:44.921527+00:00] File ./crypto_mess/certs/dsaparam.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:45.022097+00:00] File ./crypto_mess/certs/cert_ed25519_signed_by_ec.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:45.122576+00:00] File ./crypto_mess/certs/ca_cert_rsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:45.222924+00:00] File ./crypto_mess/certs/ec.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:45.323513+00:00] File ./crypto_mess/certs/cert_dsa_signed_by_rsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:45.423795+00:00] File ./crypto_mess/certs/ca_cert_ed448.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:45.524344+00:00] File ./crypto_mess/certs/rsa_signed_by_ed448.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:45.624927+00:00] File ./crypto_mess/certs/rsa_ca.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:45.725443+00:00] File ./crypto_mess/certs/cert_ed25519_signed_by_ed448.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:45.826013+00:00] File ./crypto_mess/certs/ed448_ca.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:45.926564+00:00] File ./crypto_mess/certs/ca_cert_dsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:46.027094+00:00] File ./crypto_mess/certs/ed448_signed_by_ed25519.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:46.127399+00:00] File ./crypto_mess/pfx/full_chain.p12 was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:Started loading certificate from path:
+INFO:__main__:[2025-11-23 15:41:56.228093+00:00] File ./crypto_mess/gen_roided.sh was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:56.328361+00:00] File ./crypto_mess/gen.sh was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:56.428623+00:00] File ./crypto_mess/openssl.cnf was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:56.529011+00:00] File ./crypto_mess/keys/encrypted_rsa.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:56.629322+00:00] File ./crypto_mess/keys/key_ed448.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:56.729624+00:00] File ./crypto_mess/keys/key_ed25519.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:56.829924+00:00] File ./crypto_mess/keys/ca_key_ec.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:56.930252+00:00] File ./crypto_mess/keys/encrypted_rsa.der was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:57.030529+00:00] File ./crypto_mess/keys/ca_key_ed448.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:57.130913+00:00] File ./crypto_mess/keys/key_rsa.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:57.231238+00:00] File ./crypto_mess/keys/ca_key_dsa.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:57.331525+00:00] File ./crypto_mess/keys/key_ec.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:57.431744+00:00] File ./crypto_mess/keys/ed25519.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:57.532037+00:00] File ./crypto_mess/keys/key_x448.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:57.632398+00:00] File ./crypto_mess/keys/key_x25519.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:57.732729+00:00] File ./crypto_mess/keys/ca_key_rsa.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:57.833045+00:00] File ./crypto_mess/keys/key_dsa.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:57.933336+00:00] File ./crypto_mess/keys/dsaparam.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:58.033639+00:00] File ./crypto_mess/keys/ca_key_ed25519.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:58.133964+00:00] File ./crypto_mess/broken/corrupted.crt was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:58.234310+00:00] File ./crypto_mess/broken/cert_as_key.crt was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:58.334619+00:00] File ./crypto_mess/broken/fake.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:58.437213+00:00] File ./crypto_mess/misc/tls-ca-bundle.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:58.539306+00:00] File ./crypto_mess/misc/data.bin was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:58.639592+00:00] File ./crypto_mess/misc/notes.txt was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:58.739907+00:00] File ./crypto_mess/roots/root_ec.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:58.840207+00:00] File ./crypto_mess/roots/root_rsa.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:58.940773+00:00] File ./crypto_mess/roots/root_rsa.der was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:59.041035+00:00] File ./crypto_mess/roots/root_ec.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:59.141538+00:00] File ./crypto_mess/roots/root_rsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:59.242108+00:00] File ./crypto_mess/roots/root_ec.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:59.342382+00:00] File ./crypto_mess/roots/root_rsa.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:59.442757+00:00] File ./crypto_mess/leaves/client_expired.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:59.543128+00:00] File ./crypto_mess/leaves/client_expired.csr was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:41:59.643475+00:00] File ./crypto_mess/leaves/server_valid.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:59.743822+00:00] File ./crypto_mess/leaves/client_expired.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:41:59.844366+00:00] File ./crypto_mess/leaves/server_valid.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:41:59.944787+00:00] File ./crypto_mess/leaves/server_valid.csr was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:42:00.045292+00:00] File ./crypto_mess/intermediates/int_ec1.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:00.145778+00:00] File ./crypto_mess/intermediates/int_rsa1.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:00.246189+00:00] File ./crypto_mess/intermediates/int_rsa1.csr was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:42:00.346505+00:00] File ./crypto_mess/intermediates/int_rsa1.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:42:00.446943+00:00] File ./crypto_mess/intermediates/int_ec1.csr was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:42:00.547455+00:00] File ./crypto_mess/intermediates/int_rsa1.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:00.647723+00:00] File ./crypto_mess/intermediates/int_ec1.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:42:00.748308+00:00] File ./crypto_mess/csrs/csr_rsa.pem was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:42:00.848893+00:00] File ./crypto_mess/csrs/csr_ec.pem was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:42:00.949660+00:00] File ./crypto_mess/csrs/csr_ed448.pem was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:42:01.050303+00:00] File ./crypto_mess/csrs/csr_ed25519.pem was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:42:01.150921+00:00] File ./crypto_mess/csrs/csr_dsa.pem was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:42:01.251472+00:00] File ./crypto_mess/certs/ec_signed_by_ed448.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:01.352004+00:00] File ./crypto_mess/certs/ed25519_ca.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:01.452576+00:00] File ./crypto_mess/certs/ec_signed_by_dsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:01.553130+00:00] File ./crypto_mess/certs/ed25519_signed_by_dsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:01.653490+00:00] File ./crypto_mess/certs/dsa_ca.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:42:01.754046+00:00] File ./crypto_mess/certs/ec_ca.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:01.854559+00:00] File ./crypto_mess/certs/ec_signed_by_ec.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:01.954830+00:00] File ./crypto_mess/certs/ec_ca.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:42:02.055405+00:00] File ./crypto_mess/certs/cert_rsa_signed_by_ed25519.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:02.155914+00:00] File ./crypto_mess/certs/rsa_signed_by_ed25519.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:02.256594+00:00] File ./crypto_mess/certs/rsa_signed_by_dsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:02.357064+00:00] File ./crypto_mess/certs/rsa_ca.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:42:02.457749+00:00] File ./crypto_mess/certs/cert_rsa_signed_by_dsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:02.558395+00:00] File ./crypto_mess/certs/cert_ec_signed_by_ed448.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:02.658681+00:00] File ./crypto_mess/certs/ed448_ca.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:42:02.759218+00:00] File ./crypto_mess/certs/cert_ed25519_signed_by_rsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:02.859892+00:00] File ./crypto_mess/certs/cert_ec_signed_by_rsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:02.960365+00:00] File ./crypto_mess/certs/cert_dsa_signed_by_ed25519.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:03.060655+00:00] File ./crypto_mess/certs/dsa.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:42:03.161193+00:00] File ./crypto_mess/certs/dsa_ca.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:03.261750+00:00] File ./crypto_mess/certs/ca_cert_ec.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:03.362371+00:00] File ./crypto_mess/certs/ca_cert_ed448.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:03.463008+00:00] File ./crypto_mess/certs/cert_ed448_signed_by_ed25519.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:03.563583+00:00] File ./crypto_mess/certs/cert_ed25519_signed_by_dsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:03.664175+00:00] File ./crypto_mess/certs/cert_dsa_signed_by_ed448.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:03.764658+00:00] File ./crypto_mess/certs/cert_rsa_signed_by_ec.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:03.865181+00:00] File ./crypto_mess/certs/cert_dsa_signed_by_ec.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:03.965524+00:00] File ./crypto_mess/certs/ca_cert_dsa.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:42:04.066142+00:00] File ./crypto_mess/certs/ed448.csr was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:42:04.166813+00:00] File ./crypto_mess/certs/cert_ed448_signed_by_ed448.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:04.267265+00:00] File ./crypto_mess/certs/ec.csr was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:42:04.367866+00:00] File ./crypto_mess/certs/ed25519_signed_by_ed25519.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:04.468450+00:00] File ./crypto_mess/certs/cert_ec_signed_by_ec.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:04.569048+00:00] File ./crypto_mess/certs/dsa_signed_by_rsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:04.669639+00:00] File ./crypto_mess/certs/rsa_signed_by_ec.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:04.770170+00:00] File ./crypto_mess/certs/rsa.csr was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:42:04.870632+00:00] File ./crypto_mess/certs/dsa.csr was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:42:04.971130+00:00] File ./crypto_mess/certs/cert_ed448_signed_by_ec.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:05.071636+00:00] File ./crypto_mess/certs/ed448_signed_by_ec.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:05.172212+00:00] File ./crypto_mess/certs/cert_ec_signed_by_dsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:05.272795+00:00] File ./crypto_mess/certs/cert_ed448_signed_by_rsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:05.373412+00:00] File ./crypto_mess/certs/ec_signed_by_ed25519.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:05.474024+00:00] File ./crypto_mess/certs/ed25519_signed_by_rsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:05.574316+00:00] File ./crypto_mess/certs/ed25519_ca.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:42:05.674836+00:00] File ./crypto_mess/certs/rsa_signed_by_rsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:05.775382+00:00] File ./crypto_mess/certs/dsa_signed_by_ed448.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:05.875965+00:00] File ./crypto_mess/certs/cert_ed25519_signed_by_ed25519.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:05.976467+00:00] File ./crypto_mess/certs/ed448_signed_by_rsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:06.076731+00:00] File ./crypto_mess/certs/ed25519.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:42:06.177310+00:00] File ./crypto_mess/certs/dsa_signed_by_ed25519.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:06.277881+00:00] File ./crypto_mess/certs/cert_dsa_signed_by_dsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:06.378505+00:00] File ./crypto_mess/certs/dsa_signed_by_dsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:06.479029+00:00] File ./crypto_mess/certs/ed448_signed_by_ed448.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:06.579626+00:00] File ./crypto_mess/certs/cert_rsa_signed_by_rsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:06.680274+00:00] File ./crypto_mess/certs/cert_rsa_signed_by_ed448.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:06.780928+00:00] File ./crypto_mess/certs/cert_ed448_signed_by_dsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:06.881223+00:00] File ./crypto_mess/certs/rsa.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:42:06.981814+00:00] File ./crypto_mess/certs/dsa_signed_by_ec.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:07.082203+00:00] File ./crypto_mess/certs/ca_cert_rsa.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:42:07.182558+00:00] File ./crypto_mess/certs/ca_cert_ec.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:42:07.283287+00:00] File ./crypto_mess/certs/cert_ec_signed_by_ed25519.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:07.383712+00:00] File ./crypto_mess/certs/ed448.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:42:07.484267+00:00] File ./crypto_mess/certs/ed25519.csr was read and loaded as x509 csr.
+INFO:__main__:[2025-11-23 15:42:07.584779+00:00] File ./crypto_mess/certs/ed25519_signed_by_ed448.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:07.685376+00:00] File ./crypto_mess/certs/ed448_signed_by_dsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:07.786010+00:00] File ./crypto_mess/certs/ec_signed_by_rsa.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:07.886623+00:00] File ./crypto_mess/certs/ed25519_signed_by_ec.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:07.986966+00:00] File ./crypto_mess/certs/ca_cert_ed25519.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:42:08.087617+00:00] File ./crypto_mess/certs/ca_cert_ed25519.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:08.187995+00:00] File ./crypto_mess/certs/dsaparam.pem was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:42:08.288551+00:00] File ./crypto_mess/certs/cert_ed25519_signed_by_ec.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:08.389036+00:00] File ./crypto_mess/certs/ca_cert_rsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:08.489392+00:00] File ./crypto_mess/certs/ec.key was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:42:08.590089+00:00] File ./crypto_mess/certs/cert_dsa_signed_by_rsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:08.690373+00:00] File ./crypto_mess/certs/ca_cert_ed448.srl was read but could not be loaded as either csr, cert or private key. Skipping.
+INFO:__main__:[2025-11-23 15:42:08.791011+00:00] File ./crypto_mess/certs/rsa_signed_by_ed448.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:08.891532+00:00] File ./crypto_mess/certs/rsa_ca.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:08.992112+00:00] File ./crypto_mess/certs/cert_ed25519_signed_by_ed448.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:09.092759+00:00] File ./crypto_mess/certs/ed448_ca.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:09.193310+00:00] File ./crypto_mess/certs/ca_cert_dsa.pem was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:09.293986+00:00] File ./crypto_mess/certs/ed448_signed_by_ed25519.crt was read and loaded as x509 cert.
+INFO:__main__:[2025-11-23 15:42:09.394349+00:00] File ./crypto_mess/pfx/full_chain.p12 was read but could not be loaded as either csr, cert or private key. Skipping.
