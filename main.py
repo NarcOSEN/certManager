@@ -13,7 +13,7 @@ def check_value_types(input_dict):
 def main():
 
     file_paths = []
-    for root, dir, files in os.walk("./home"):
+    for root, dir, files in os.walk("./crypto_mess/"):
         for file in files:
             full_path = os.path.join(root, file)
             file_paths.append(full_path)
