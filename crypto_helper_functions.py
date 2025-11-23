@@ -14,21 +14,26 @@ def der_or_pem(data):
 
 def get_private_key_as_dict(input_key, passwords_list):
 
-    key_dict = {}
+    private_key_dict = {}
     for password in passwords_list:
         try:
-
-            print(password,type(password))
-            key = load_der_private_key(input_key, password.encode())
-            key_dict["password"] = password
+            loaded_pem_private_key = load_pem_private_key(input_key, password)
+            private_pem_key_dict["password"] = password
+            print(type(loaded_private_key))
+            private_key_dict["public_bytes"] = get_public_key_as_dict(loaded_private_key.public_bytes)
+            #print(type(key_dict["public_bytes"]))
         except Exception as e:
             pass
-        try:
-            key = load_pem_private_key(input_key, password.encode())
-            print(type(key))
-        except Exception as e:
-                pass
-    return key_dict
+       # try:
+       #     key = load_der_private_key(input_key, password.encode())
+       #     print(type(key))
+        #except Exception as e:
+        #        pass
+    return private_key_dict
+
+with open('./crypto_mess/intermediates/int_rsa1.key', 'rb') as rsa_test_key:
+    loaded_rsa_key = get_private_key_as_dict(input_key=rsa_test_key.read(), passwords_list=[b'test',None])
+    print(loaded_rsa_key)
 
 
 def get_der_csr_as_dict(input_csr):
