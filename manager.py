@@ -145,7 +145,7 @@ def run_load():
 
         except Exception as e:
             logger.info(f"[{curr_time()}]Could not read file {path}. Exception: {e}")
-        time.sleep(0.1)
+        #time.sleep(0.1)
 
 if __name__ == "__main__":
     while True:

@@ -1,6 +1,6 @@
 from cryptography import x509
 from cryptography import hazmat
-from cryptography.hazmat.primitives.serialization import load_pem_private_key
+from cryptography.hazmat.primitives.serialization import load_pem_private_key,load_der_private_key
 
 def der_or_pem(data):
     if b"-----BEGIN CERTIFICATE-----" in data:
@@ -17,15 +17,16 @@ def get_private_key_as_dict(input_key, passwords_list):
     key_dict = {}
     for password in passwords_list:
         try:
-            key = hazmat.primitives.serialization.load_der_private_key(
-                input_key, password.encode())
+
+            print(password,type(password))
+            key = load_der_private_key(input_key, password.encode())
             key_dict["password"] = password
-            break
         except Exception as e:
-            try:
-                key = load_pem_private_key(input_key, password.encode())
-                print(type(key))
-            except Exception as e:
+            pass
+        try:
+            key = load_pem_private_key(input_key, password.encode())
+            print(type(key))
+        except Exception as e:
                 pass
     return key_dict
 
