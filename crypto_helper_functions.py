@@ -122,6 +122,7 @@ def get_pem_cert_as_dict(input_pem):
     """
     try:
         loaded_pem = x509.load_pem_x509_certificate(input_pem)
+        #print(type(loaded_pem))
         pem_dict = {}
         pem_dict["type"] = "PEM"
         pem_dict["version"] = loaded_pem.version.name
@@ -149,6 +150,41 @@ def get_pem_cert_as_dict(input_pem):
     except Exception as e:
         return e
 
+#TODO:
+def get_pem_certS_as_dict(input_pem):
+    """ Same as get_pem_cert_as_dict but uses x509.load_der_x509_certificates function that returns list of certificates.
+    To be used when more than one certificate is in a pem bundle. Useful in parsing haproxy and other configs where multiple certs are bundled in the same file.
+    """
+    try: 
+        loaded_pem_list = x509.load_pem_x509_certificates(input_pem)
+        pem_dict_list = []
+        for loaded_pem in loaded_pem_list:
+            pem_dict = {}
+            pem_dict["type"] = "PEM"
+            pem_dict["version"] = loaded_pem.version.name
+            pem_dict["public_key"] = get_public_key_as_dict(
+            loaded_pem.public_key())
+            pem_dict["subject"] = {}
+            for attribute in loaded_pem.subject:
+                pem_dict["subject"][attribute.oid._name] = attribute.value
+            pem_dict["issuer"] = {}
+            for attribute in loaded_pem.issuer:
+                pem_dict["issuer"][attribute.oid._name] = attribute.value
+            pem_dict["iso_not_valid_before_utc"] = loaded_pem.not_valid_before_utc.isoformat()
+            pem_dict["iso_not_valid_after_utc"] = loaded_pem.not_valid_after_utc.isoformat()
+            pem_dict["epoch_not_valid_before_utc"] = int(
+                loaded_pem.not_valid_before_utc.timestamp())
+            pem_dict["epoch_not_valid_after_utc"] = int(
+                loaded_pem.not_valid_after_utc.timestamp())
+            pem_dict["serial_number"] = loaded_pem.serial_number
+            pem_dict["sha1_fingerprint"] = ''.join(f'{b:02X}' for b in loaded_pem.fingerprint(
+                algorithm=hazmat.primitives.hashes.SHA1()))
+            pem_dict["public_bytes"] = loaded_pem.public_bytes(
+                encoding=hazmat.primitives.serialization.Encoding.PEM).decode("utf-8")
+            pem_dict_list.append(pem_dict)
+        return pem_dict_list
+    except Exception as e:
+        return e
 
 def get_public_key_as_dict(input_key):
     """

@@ -72,7 +72,7 @@ def run_load():
 
     for path in file_paths:
         #logger.info(f'[{curr_time()}] Trying to load {path}')
-        is_pem_cert, is_der_cert, is_pem_csr, is_der_csr, is_private_key = False, False, False, False, False
+        is_pem_cert, is_der_cert, is_pem_csr, is_der_csr, is_private_key, is_pem_bundle_list = False, False, False, False, False, False
         try:
             with open(path, "rb") as file:
                 read_data = file.read()
@@ -103,7 +103,17 @@ def run_load():
                     is_der_csr = True
                 except Exception as e:
                     #logger.info(f"[{curr_time()}]Couldn't load file {path} as DER CSR. Exception: {e}")
-                    pass 
+                    pass
+                try: 
+                    list_result_dict_pem_cert = get_pem_certS_as_dict(read_data)
+                    list_sha256 = []
+                    for entry in list_result_dict_pem_cert:
+                        sha256hash = hash_string(entry["public_key"]["public_bytes"])
+                        entry["path"] = path
+                        list_sha256.append(sha256hash)
+                    is_pem_bundle_list = True
+                except:
+                    pass
                 #TODO: Fix get_private_key_as_dict() function. Not working
                 #try:
                 #    passwords_list = [b"test", None]
@@ -114,16 +124,19 @@ def run_load():
                 #
                 if is_pem_cert == False and is_der_cert == False and is_pem_csr == False and is_der_csr == False and is_private_key == False:
                     logger.info(f"[{curr_time()}] File {path} was read but could not be loaded as either csr, cert or private key. Skipping.")
-                
-                elif is_pem_cert == True:
+
+
+                if is_pem_bundle_list == True:
+                    logger.info(f"[{curr_time()}] File {path} was read and loaded as x509 cert BUNDLE. PubKey sha256 list: [{list_sha256}]")
+                if is_pem_cert == True:
                     logger.info(f"[{curr_time()}] File {path} was read and loaded as x509 cert. PubKey sha256:[{hash_string(result_dict_pem_cert["public_key"]["public_bytes"])}]")
-                elif is_der_cert == True:
+                if is_der_cert == True:
                     logger.info(f"[{curr_time()}] File {path} was read and loaded as x509 cert. PubKey Sha256: [{hash_string(result_dict_der_cert["public_key"]["public_bytes"])}]")
-                elif is_pem_csr == True:
+                if is_pem_csr == True:
                     logger.info(f"[{curr_time()}] File {path} was read and loaded as x509 csr. PubKey Sha256: [{hash_string(result_dict_pem_csr["public_key"]["public_bytes"])}]")
-                elif is_der_csr == True:
+                if is_der_csr == True:
                     logger.info(f"[{curr_time()}] File {path} was read and loaded as x509 csr. PubKey Sha256: [{hash_string(result_dict_der_csr["public_key"]["public_bytes"])}]")
-                elif is_private_key == True:
+                if is_private_key == True:
                     logger.info(f"[{curr_time()}] File {path} was read and loaded as private key. PubKey Sha256: [{hash_string(result_dict_private_key["public_key"]["public_bytes"])}]")
 
         except Exception as e:
