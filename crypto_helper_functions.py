@@ -85,7 +85,7 @@ def get_der_cert_as_dict(input_der):
     try:
         loaded_der = x509.load_der_x509_certificate(input_der)
         der_dict = {}
-        der_dict["type"] = "DER"
+        der_dict["type"] = "DER_CERT"
         der_dict["version"] = loaded_der.version.name
         der_dict["public_key"] = get_public_key_as_dict(
             loaded_der.public_key())
@@ -124,7 +124,7 @@ def get_pem_cert_as_dict(input_pem):
         loaded_pem = x509.load_pem_x509_certificate(input_pem)
         #print(type(loaded_pem))
         pem_dict = {}
-        pem_dict["type"] = "PEM"
+        pem_dict["type"] = "PEM_CERT"
         pem_dict["version"] = loaded_pem.version.name
         pem_dict["public_key"] = get_public_key_as_dict(
             loaded_pem.public_key())
@@ -150,7 +150,7 @@ def get_pem_cert_as_dict(input_pem):
     except Exception as e:
         return e
 
-#TODO:
+
 def get_pem_certS_as_dict(input_pem):
     """ Same as get_pem_cert_as_dict but uses x509.load_der_x509_certificates function that returns list of certificates.
     To be used when more than one certificate is in a pem bundle. Useful in parsing haproxy and other configs where multiple certs are bundled in the same file.
@@ -160,7 +160,7 @@ def get_pem_certS_as_dict(input_pem):
         pem_dict_list = []
         for loaded_pem in loaded_pem_list:
             pem_dict = {}
-            pem_dict["type"] = "PEM"
+            pem_dict["type"] = "PEM_CERT"
             pem_dict["version"] = loaded_pem.version.name
             pem_dict["public_key"] = get_public_key_as_dict(
             loaded_pem.public_key())
