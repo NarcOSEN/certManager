@@ -37,6 +37,7 @@ DB schema:
     TABLE certificates:
     - sha256(public_key.public_bytes) PRIMARY KEY
     - public_bytes
+    - path 
     - subject
     - iso_not_valid_before_utc
     - iso_not_valid_after_utc
@@ -45,12 +46,14 @@ DB schema:
     TABLE csrs:
     - sha256(public_key.public_bytes) PRIMARY KEY
     - public_bytes
+    - path 
     - subject
 
 
     TABLE private_keys:
     - sha256(public_key.public_bytes) PRIMARY KEY
     - public_bytes
+    - path 
 
 
               
