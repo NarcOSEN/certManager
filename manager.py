@@ -118,13 +118,14 @@ def run_load():
                 except:
                     pass
                 #TODO: Fix get_private_key_as_dict() function. Not working
-                #try:
-                #    passwords_list = [b"test", None]
-                #    print(f"Successfully loaded {path} as PRIVATE KEY", json.dumps(
-                #        get_private_key_as_dict(read_data, passwords_list=passwords_list)))
-                #except Exception as e:
-                #    print(f"Couldn't load file {path} as PRIVATE KEY.", e)
-                #
+                try:
+                    passwords_list = [b"test", None]
+                    get_private_key_as_dict(read_data, passwords_list=passwords_list)
+                except Exception as e:
+                    pass
+
+
+
                 if is_pem_cert == False and is_der_cert == False and is_pem_csr == False and is_der_csr == False and is_private_key == False:
                     logger.info(f"[{curr_time()}] File {path} was read but could not be loaded as either csr, cert or private key. Skipping.")
 
