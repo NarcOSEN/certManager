@@ -240,7 +240,7 @@ def get_public_key_as_dict(input_key):
             encoding=hazmat.primitives.serialization.Encoding.PEM, format=hazmat.primitives.serialization.PublicFormat.SubjectPublicKeyInfo).decode("utf-8")
         return pub_key_dict
 
-        # TODO: UNTESTED!!!
+        # TODO: UNTESTED BECAUSE APPARENTLY NOT USED IN SIGNING/GENERATING X509 CERTIFICATES. I WILL LEAVE THEM HERE ANYWAYS BECAUSE WHO KNOWS WHEN THEY'LLBE USEFUL
     elif type(input_key) is hazmat.bindings._rust.openssl.x25519.X25519PublicKey:
         pub_key_dict = {}
         pub_key_dict["type"] = "X25519PublicKey"
@@ -252,7 +252,7 @@ def get_public_key_as_dict(input_key):
             encoding=hazmat.primitives.serialization.Encoding.PEM, format=hazmat.primitives.serialization.PublicFormat.SubjectPublicKeyInfo).decode("utf-8")
         return pub_key_dict
 
-        # TODO: UNTESTED!!!
+        # TODO: UNTESTED BECAUSE APPARENTLY NOT USED IN SIGNING/GENERATING X509 CERTIFICATES. I WILL LEAVE THEM HERE ANYWAYS BECAUSE WHO KNOWS WHEN THEYLLBE USEFUL
     elif type(input_key) is hazmat.bindings._rust.openssl.x448.X448PublicKey:
         pub_key_dict = {}
         pub_key_dict["type"] = "X448PublicKey"
