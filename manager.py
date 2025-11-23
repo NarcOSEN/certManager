@@ -7,6 +7,7 @@ import cryptography
 from crypto_helper_functions import *
 import logging
 import datetime
+import hashlib
 logger = logging.getLogger(__name__)
 """ 
     During check try:
@@ -29,8 +30,34 @@ logger = logging.getLogger(__name__)
             - else if is_private-key == true:
                 Log as private_key with path to file.
             - else: Log with "could not load as either csr certificate or private key for path <path>"
-"""
 
+
+###############################################################################################
+DB schema:
+    TABLE certificates:
+    - sha256(public_key.public_bytes) PRIMARY KEY
+    - public_bytes
+    - subject
+    - iso_not_valid_before_utc
+    - iso_not_valid_after_utc
+    - sha1_fingerprint
+
+    TABLE csrs:
+    - sha256(public_key.public_bytes) PRIMARY KEY
+    - public_bytes
+    - subject
+
+
+    TABLE private_keys:
+    - sha256(public_key.public_bytes) PRIMARY KEY
+    - public_bytes
+
+
+              
+"""
+def hash_string(text: str) -> str:
+    """Return the SHA-256 hash of a given string."""
+    return hashlib.sha256(text.encode('utf-8')).hexdigest()
 def curr_time():
     return datetime.datetime.now(tz=datetime.UTC)
 def run_load():
@@ -45,35 +72,35 @@ def run_load():
 
     for path in file_paths:
         #logger.info(f'[{curr_time()}] Trying to load {path}')
-        is_csr,is_cert,is_private_key = False,False,False
+        is_pem_cert, is_der_cert, is_pem_csr, is_der_csr, is_private_key = False, False, False, False, False
         try:
             with open(path, "rb") as file:
                 read_data = file.read()
                 try:
-                    result_dict = get_der_cert_as_dict(read_data)
-                    result_dict["path"] = path
-                    is_cert = True
+                    result_dict_der_cert = get_der_cert_as_dict(read_data)
+                    result_dict_der_cert["path"] = path
+                    is_der_cert = True
                 except Exception as e:
                     #logger.info(f"[{curr_time()}]Couldn't load file {path} as DER X509 CERT. Exception: {e}")
                     pass
                 try:
-                    result_dict = get_pem_cert_as_dict(read_data)
-                    result_dict["path"] = path
-                    is_cert = True
+                    result_dict_pem_cert = get_pem_cert_as_dict(read_data)
+                    result_dict_pem_cert["path"] = path
+                    is_pem_cert = True
                 except Exception as e:
                     #logger.info(f"[{curr_time()}]Couldn't load file {path} as PEM X509 CERT. Exception: {e}")
                     pass 
                 try:
-                    result_dict = get_pem_csr_as_dict(read_data)
-                    result_dict["path"] = path
-                    is_csr = True
+                    result_dict_pem_csr = get_pem_csr_as_dict(read_data)
+                    result_dict_pem_csr["path"] = path
+                    is_pem_csr = True
                 except Exception as e:
                     #logger.info(f"[{curr_time()}]Couldn't load file {path} as PEM CSR. Exception: {e}")
                     pass 
                 try:
-                    result_dict = get_der_csr_as_dict(read_data)
-                    result_dict["path"] = path
-                    is_csr = True
+                    result_dict_der_csr = get_der_csr_as_dict(read_data)
+                    result_dict_der_csr["path"] = path
+                    is_der_csr = True
                 except Exception as e:
                     #logger.info(f"[{curr_time()}]Couldn't load file {path} as DER CSR. Exception: {e}")
                     pass 
@@ -85,14 +112,19 @@ def run_load():
                 #except Exception as e:
                 #    print(f"Couldn't load file {path} as PRIVATE KEY.", e)
                 #
-                if is_cert == False and is_csr == False and is_private_key == False:
+                if is_pem_cert == False and is_der_cert == False and is_pem_csr == False and is_der_csr == False and is_private_key == False:
                     logger.info(f"[{curr_time()}] File {path} was read but could not be loaded as either csr, cert or private key. Skipping.")
-                elif is_cert == True:
-                    logger.info(f"[{curr_time()}] File {path} was read and loaded as x509 cert.")
-                elif is_csr == True:
-                    logger.info(f"[{curr_time()}] File {path} was read and loaded as x509 csr.")
+                
+                elif is_pem_cert == True:
+                    logger.info(f"[{curr_time()}] File {path} was read and loaded as x509 cert. PubKey sha256:[{hash_string(result_dict_pem_cert["public_key"]["public_bytes"])}]")
+                elif is_der_cert == True:
+                    logger.info(f"[{curr_time()}] File {path} was read and loaded as x509 cert. PubKey Sha256: [{hash_string(result_dict_der_cert["public_key"]["public_bytes"])}]")
+                elif is_pem_csr == True:
+                    logger.info(f"[{curr_time()}] File {path} was read and loaded as x509 cert. PubKey Sha256: [{hash_string(result_dict_pem_csr["public_key"]["public_bytes"])}]")
+                elif is_der_csr == True:
+                    logger.info(f"[{curr_time()}] File {path} was read and loaded as x509 csr. PubKey Sha256: [{hash_string(result_dict_der_csr["public_key"]["public_bytes"])}]")
                 elif is_private_key == True:
-                    logger.info(f"[{curr_time()}] File {path} was read and loaded as private key.")
+                    logger.info(f"[{curr_time()}] File {path} was read and loaded as private key. PubKey Sha256: [{hash_string(result_dict_private_key["public_key"]["public_bytes"])}]")
 
         except Exception as e:
             logger.info(f"[{curr_time()}]Could not read file {path}. Exception: {e}")

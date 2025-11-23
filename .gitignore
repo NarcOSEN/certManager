@@ -12,3 +12,4 @@ __pycache__/
 pyvenv.cfg
 *.logs
 manager.logs
+manager.logs
