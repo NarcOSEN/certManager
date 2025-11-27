@@ -9,7 +9,7 @@ import logging
 import datetime
 import hashlib
 logger = logging.getLogger(__name__)
-""" 
+"""
     During check try:
         * load as csr - if OK:
             - save csr to csr table.
@@ -22,8 +22,8 @@ logger = logging.getLogger(__name__)
         * load as private key - if OK:
             - save private key in private_keys table if not exists.
             -- is_private_key = true;
-        else: 
-            - if is_csr == true: 
+        else:
+            - if is_csr == true:
                 Log as csr with path to file.
             - else if is_cert == true:
                 Log as cert with path to file.
@@ -37,7 +37,7 @@ DB schema:
     TABLE certificates:
     - sha256(public_key.public_bytes) PRIMARY KEY
     - public_bytes
-    - path 
+    - path
     - subject
     - iso_not_valid_before_utc
     - iso_not_valid_after_utc
@@ -46,17 +46,17 @@ DB schema:
     TABLE csrs:
     - sha256(public_key.public_bytes) PRIMARY KEY
     - public_bytes
-    - path 
+    - path
     - subject
 
 
     TABLE private_keys:
     - sha256(public_key.public_bytes) PRIMARY KEY
     - public_bytes
-    - path 
+    - path
 
 
-              
+
 """
 def hash_string(text: str) -> str:
     """Return the SHA-256 hash of a given string."""
@@ -97,7 +97,7 @@ def run_load():
                         result_dict_pem_csr["path"] = path
                         is_pem_csr = True
                 except Exception as pem_csr_e:
-                    pass 
+                    pass
                 try:
                     result_dict_der_csr = get_der_csr_as_dict(read_data)
                     if result_dict_der_csr and "public_key" in result_dict_der_csr:
@@ -105,7 +105,7 @@ def run_load():
                         is_der_csr = True
                 except Exception as der_csr_e:
                     pass
-                try: 
+                try:
                     list_result_dict_pem_cert = get_pem_certS_as_dict(read_data)
                     list_sha256 = []
                     for entry in list_result_dict_pem_cert:
@@ -124,8 +124,8 @@ def run_load():
                         is_private_key = True
                 except Exception as pem_private_key_e:
                     pass
-                
-                
+
+
                 if is_pem_bundle_list == False and is_der_cert == False and is_pem_csr == False and is_der_csr == False and is_private_key == False:
                     logger.info(f"[{curr_time()}] File {path} was read but could not be loaded as either csr, cert or private key. Skipping.")
                 if is_pem_bundle_list == True:
@@ -144,5 +144,4 @@ def run_load():
 if __name__ == "__main__":
     while True:
         run_load()
-        time.sleep(5)
-
+        time.sleep(50000)
