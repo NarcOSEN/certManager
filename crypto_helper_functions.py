@@ -2,6 +2,7 @@ from cryptography import x509
 from cryptography import hazmat
 from cryptography.hazmat.primitives.serialization import load_pem_private_key,load_der_private_key
 
+
 def der_or_pem(data):
     if b"-----BEGIN CERTIFICATE-----" in data:
         return "PEM"
@@ -11,29 +12,91 @@ def der_or_pem(data):
     except Exception:
         return "Unknown or not certificate"
 
+def get_public_key_as_dict(input_key):
+    """
+    Takes as input a public key of type hazmat.bindings._rust.openssl.*
+    Outputs the key type, modulus, public_bytes
+    """
 
-def get_private_key_as_dict(input_key, passwords_list):
+    if type(input_key) is hazmat.bindings._rust.openssl.rsa.RSAPublicKey:
+        pub_key_dict = {}
+        pub_key_dict["type"] = "RSAPublicKey"
+        pub_key_dict["modulus"] = hex(input_key.public_numbers().n)
+        pub_key_dict["public_bytes"] = input_key.public_bytes(
+            encoding=hazmat.primitives.serialization.Encoding.PEM, format=hazmat.primitives.serialization.PublicFormat.SubjectPublicKeyInfo).decode("utf-8")
+        return pub_key_dict
 
-    private_key_dict = {}
-    for password in passwords_list:
-        try:
-            loaded_pem_private_key = load_pem_private_key(input_key, password)
-            private_pem_key_dict["password"] = password
-            print(type(loaded_private_key))
-            private_key_dict["public_bytes"] = get_public_key_as_dict(loaded_private_key.public_bytes)
-            #print(type(key_dict["public_bytes"]))
-        except Exception as e:
-            pass
-       # try:
-       #     key = load_der_private_key(input_key, password.encode())
-       #     print(type(key))
-        #except Exception as e:
-        #        pass
-    return private_key_dict
+    elif type(input_key) is hazmat.bindings._rust.openssl.dsa.DSAPublicKey:
+        pub_key_dict = {}
+        pub_key_dict["type"] = "DSAPublicKey"
+        pub_key_dict["modulus"] = hex(input_key.public_numbers().y)
+        pub_key_dict["public_bytes"] = input_key.public_bytes(
+            encoding=hazmat.primitives.serialization.Encoding.PEM, format=hazmat.primitives.serialization.PublicFormat.SubjectPublicKeyInfo).decode("utf-8")
+        return pub_key_dict
 
-with open('./crypto_mess/intermediates/int_rsa1.key', 'rb') as rsa_test_key:
-    loaded_rsa_key = get_private_key_as_dict(input_key=rsa_test_key.read(), passwords_list=[b'test',None])
-    print(loaded_rsa_key)
+    elif type(input_key) is hazmat.bindings._rust.openssl.ec.ECPublicKey:
+        pub_key_dict = {}
+        pub_key_dict["type"] = "ECPublicKey"
+        pub_key_dict["modulus"] = {}
+        pub_key_dict["modulus"]["x"] = input_key.public_numbers().x
+        pub_key_dict["modulus"]["y"] = input_key.public_numbers().y
+        pub_key_dict["public_bytes"] = input_key.public_bytes(
+            encoding=hazmat.primitives.serialization.Encoding.PEM, format=hazmat.primitives.serialization.PublicFormat.SubjectPublicKeyInfo).decode("utf-8")
+        return pub_key_dict
+
+    elif type(input_key) is hazmat.bindings._rust.openssl.ed25519.Ed25519PublicKey:
+        pub_key_dict = {}
+        pub_key_dict["type"] = "Ed25519PublicKey"
+        pub_key_dict["modulus"] = ''.join(f'{b:02X}' for b in input_key.public_bytes(
+            encoding=hazmat.primitives.serialization.Encoding.Raw,
+            format=hazmat.primitives.serialization.PublicFormat.Raw
+        ))
+        pub_key_dict["public_bytes"] = input_key.public_bytes(
+            encoding=hazmat.primitives.serialization.Encoding.PEM, format=hazmat.primitives.serialization.PublicFormat.SubjectPublicKeyInfo).decode("utf-8")
+        return pub_key_dict
+
+    elif type(input_key) is hazmat.bindings._rust.openssl.ed448.Ed448PublicKey:
+        pub_key_dict = {}
+        pub_key_dict["type"] = "Ed448PublicKey"
+        pub_key_dict["modulus"] = ''.join(f'{b:02X}' for b in input_key.public_bytes(
+            encoding=hazmat.primitives.serialization.Encoding.Raw,
+            format=hazmat.primitives.serialization.PublicFormat.Raw
+        ))
+        pub_key_dict["public_bytes"] = input_key.public_bytes(
+            encoding=hazmat.primitives.serialization.Encoding.PEM, format=hazmat.primitives.serialization.PublicFormat.SubjectPublicKeyInfo).decode("utf-8")
+        return pub_key_dict
+
+        # TODO: UNTESTED BECAUSE APPARENTLY NOT USED IN SIGNING/GENERATING X509 CERTIFICATES. I WILL LEAVE THEM HERE ANYWAYS BECAUSE WHO KNOWS WHEN THEY'LLBE USEFUL
+    elif type(input_key) is hazmat.bindings._rust.openssl.x25519.X25519PublicKey:
+        pub_key_dict = {}
+        pub_key_dict["type"] = "X25519PublicKey"
+        pub_key_dict["modulus"] = ''.join(f'{b:02X}' for b in input_key.public_bytes(
+            encoding=hazmat.primitives.serialization.Encoding.Raw,
+            format=hazmat.primitives.serialization.PublicFormat.Raw
+        ))
+        pub_key_dict["public_bytes"] = input_key.public_bytes(
+            encoding=hazmat.primitives.serialization.Encoding.PEM, format=hazmat.primitives.serialization.PublicFormat.SubjectPublicKeyInfo).decode("utf-8")
+        return pub_key_dict
+
+        # TODO: UNTESTED BECAUSE APPARENTLY NOT USED IN SIGNING/GENERATING X509 CERTIFICATES. I WILL LEAVE THEM HERE ANYWAYS BECAUSE WHO KNOWS WHEN THEYLLBE USEFUL
+    elif type(input_key) is hazmat.bindings._rust.openssl.x448.X448PublicKey:
+        pub_key_dict = {}
+        pub_key_dict["type"] = "X448PublicKey"
+        pub_key_dict["modulus"] = ''.join(f'{b:02X}' for b in input_key.public_bytes(
+            encoding=hazmat.primitives.serialization.Encoding.Raw,
+            format=hazmat.primitives.serialization.PublicFormat.Raw
+        ))
+        pub_key_dict["public_bytes"] = input_key.public_bytes(
+            encoding=hazmat.primitives.serialization.Encoding.PEM, format=hazmat.primitives.serialization.PublicFormat.SubjectPublicKeyInfo).decode("utf-8")
+        return pub_key_dict
+
+    else:
+        pub_key_dict = {}
+        pub_key_dict["type"] = "UNKNOWN"
+
+        return pub_key_dict
+
+
 
 
 def get_der_csr_as_dict(input_csr):
@@ -191,86 +254,20 @@ def get_pem_certS_as_dict(input_pem):
     except Exception as e:
         return e
 
-def get_public_key_as_dict(input_key):
-    """
-    Takes as input a public key of type hazmat.bindings._rust.openssl.*
-    Outputs the key type, modulus, public_bytes
-    """
 
-    if type(input_key) is hazmat.bindings._rust.openssl.rsa.RSAPublicKey:
-        pub_key_dict = {}
-        pub_key_dict["type"] = "RSAPublicKey"
-        pub_key_dict["modulus"] = hex(input_key.public_numbers().n)
-        pub_key_dict["public_bytes"] = input_key.public_bytes(
-            encoding=hazmat.primitives.serialization.Encoding.PEM, format=hazmat.primitives.serialization.PublicFormat.SubjectPublicKeyInfo).decode("utf-8")
-        return pub_key_dict
+def get_private_key_as_dict(input_key, passwords_list):
 
-    elif type(input_key) is hazmat.bindings._rust.openssl.dsa.DSAPublicKey:
-        pub_key_dict = {}
-        pub_key_dict["type"] = "DSAPublicKey"
-        pub_key_dict["modulus"] = hex(input_key.public_numbers().y)
-        pub_key_dict["public_bytes"] = input_key.public_bytes(
-            encoding=hazmat.primitives.serialization.Encoding.PEM, format=hazmat.primitives.serialization.PublicFormat.SubjectPublicKeyInfo).decode("utf-8")
-        return pub_key_dict
+    private_key_dict = {}
+    for password in passwords_list:
+        try:
+            loaded_pem_private_key = load_pem_private_key(input_key, password)
+            private_key_dict["password"] = "None"
+            private_key_dict["public_key"] = get_public_key_as_dict(loaded_pem_private_key.public_key())
+        except Exception as e:
+            pass
+    return private_key_dict
 
-    elif type(input_key) is hazmat.bindings._rust.openssl.ec.ECPublicKey:
-        pub_key_dict = {}
-        pub_key_dict["type"] = "ECPublicKey"
-        pub_key_dict["modulus"] = {}
-        pub_key_dict["modulus"]["x"] = input_key.public_numbers().x
-        pub_key_dict["modulus"]["y"] = input_key.public_numbers().y
-        pub_key_dict["public_bytes"] = input_key.public_bytes(
-            encoding=hazmat.primitives.serialization.Encoding.PEM, format=hazmat.primitives.serialization.PublicFormat.SubjectPublicKeyInfo).decode("utf-8")
-        return pub_key_dict
-
-    elif type(input_key) is hazmat.bindings._rust.openssl.ed25519.Ed25519PublicKey:
-        pub_key_dict = {}
-        pub_key_dict["type"] = "Ed25519PublicKey"
-        pub_key_dict["modulus"] = ''.join(f'{b:02X}' for b in input_key.public_bytes(
-            encoding=hazmat.primitives.serialization.Encoding.Raw,
-            format=hazmat.primitives.serialization.PublicFormat.Raw
-        ))
-        pub_key_dict["public_bytes"] = input_key.public_bytes(
-            encoding=hazmat.primitives.serialization.Encoding.PEM, format=hazmat.primitives.serialization.PublicFormat.SubjectPublicKeyInfo).decode("utf-8")
-        return pub_key_dict
-
-    elif type(input_key) is hazmat.bindings._rust.openssl.ed448.Ed448PublicKey:
-        pub_key_dict = {}
-        pub_key_dict["type"] = "Ed448PublicKey"
-        pub_key_dict["modulus"] = ''.join(f'{b:02X}' for b in input_key.public_bytes(
-            encoding=hazmat.primitives.serialization.Encoding.Raw,
-            format=hazmat.primitives.serialization.PublicFormat.Raw
-        ))
-        pub_key_dict["public_bytes"] = input_key.public_bytes(
-            encoding=hazmat.primitives.serialization.Encoding.PEM, format=hazmat.primitives.serialization.PublicFormat.SubjectPublicKeyInfo).decode("utf-8")
-        return pub_key_dict
-
-        # TODO: UNTESTED BECAUSE APPARENTLY NOT USED IN SIGNING/GENERATING X509 CERTIFICATES. I WILL LEAVE THEM HERE ANYWAYS BECAUSE WHO KNOWS WHEN THEY'LLBE USEFUL
-    elif type(input_key) is hazmat.bindings._rust.openssl.x25519.X25519PublicKey:
-        pub_key_dict = {}
-        pub_key_dict["type"] = "X25519PublicKey"
-        pub_key_dict["modulus"] = ''.join(f'{b:02X}' for b in input_key.public_bytes(
-            encoding=hazmat.primitives.serialization.Encoding.Raw,
-            format=hazmat.primitives.serialization.PublicFormat.Raw
-        ))
-        pub_key_dict["public_bytes"] = input_key.public_bytes(
-            encoding=hazmat.primitives.serialization.Encoding.PEM, format=hazmat.primitives.serialization.PublicFormat.SubjectPublicKeyInfo).decode("utf-8")
-        return pub_key_dict
-
-        # TODO: UNTESTED BECAUSE APPARENTLY NOT USED IN SIGNING/GENERATING X509 CERTIFICATES. I WILL LEAVE THEM HERE ANYWAYS BECAUSE WHO KNOWS WHEN THEYLLBE USEFUL
-    elif type(input_key) is hazmat.bindings._rust.openssl.x448.X448PublicKey:
-        pub_key_dict = {}
-        pub_key_dict["type"] = "X448PublicKey"
-        pub_key_dict["modulus"] = ''.join(f'{b:02X}' for b in input_key.public_bytes(
-            encoding=hazmat.primitives.serialization.Encoding.Raw,
-            format=hazmat.primitives.serialization.PublicFormat.Raw
-        ))
-        pub_key_dict["public_bytes"] = input_key.public_bytes(
-            encoding=hazmat.primitives.serialization.Encoding.PEM, format=hazmat.primitives.serialization.PublicFormat.SubjectPublicKeyInfo).decode("utf-8")
-        return pub_key_dict
-
-    else:
-        pub_key_dict = {}
-        pub_key_dict["type"] = "UNKNOWN"
-
-        return pub_key_dict
+#Test code for get_private_key_as_dict()
+#with open('./crypto_mess/intermediates/int_rsa1.key', 'rb') as rsa_test_key:
+#    loaded_rsa_key = get_private_key_as_dict(input_key=rsa_test_key.read(), passwords_list=[b'test',None])
+#   print(loaded_rsa_key)
